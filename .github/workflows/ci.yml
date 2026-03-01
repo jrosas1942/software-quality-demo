@@ -1,0 +1,23 @@
+name: CI Pipeline
+
+on: [push]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Code Quality
+      run: flake8 app/
+
+    - name: Run Tests
+      run: pytest
