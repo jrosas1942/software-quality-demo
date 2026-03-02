@@ -1,0 +1,1 @@
+![CI Pipeline](https://github.com/jrosas1942/software-quality-demo/actions/workflows/ci.yml/badge.svg)
